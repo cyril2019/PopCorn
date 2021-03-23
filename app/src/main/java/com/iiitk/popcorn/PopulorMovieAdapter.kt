@@ -2,6 +2,7 @@ package com.iiitk.popcorn
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -34,6 +35,12 @@ class PopularMovieAdapter(val context:Context,val movies: List<Movie>): Recycler
         holder.llMovie.setOnClickListener{
             val intent= Intent(context,MovieActivity::class.java)
             intent.putExtra("id",movie.id)
+            intent.putExtra("name",movie.title)
+            intent.putExtra("rating",movie.vote_average.toString())
+            intent.putExtra("disc",movie.overview)
+            intent.putExtra("image",movie.poster_path)
+            intent.putExtra("backdrop",movie.backdrop_path)
+            context.startActivity(intent)
         }
     }
 

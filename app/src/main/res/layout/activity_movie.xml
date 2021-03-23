@@ -1,9 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MovieActivity">
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/llMovDetails"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:weightSum="3">
+                <ImageView
+                    android:id="@+id/imgMovieImage"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/logo"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:layout_weight="2">
+                    <TextView
+                        android:id="@+id/txtMovieName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Movie Name"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        />
+                    <TextView
+                        android:id="@+id/txtMovieRating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5.0"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/yellow"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/txtMovieDisc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Discription"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="italic"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:scrollbars = "vertical"
+                        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_below="@+id/llMovDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trailers"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:id="@+id/txt1"
+                android:textColor="#000000"
+                android:textSize="20sp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/txt1"
+                android:layout_marginTop="10dp"
+                android:id="@+id/rvTrailer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <TextView
+                android:layout_below="@+id/rvTrailer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reviews"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:id="@+id/txt2"
+                android:textColor="#000000"
+                android:textSize="20sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/txt2"
+                android:layout_marginTop="10dp"
+                android:id="@+id/rvReviews"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

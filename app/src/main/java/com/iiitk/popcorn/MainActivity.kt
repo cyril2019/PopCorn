@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.HorizontalScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -46,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         movies.enqueue(object: Callback<PopularMovies>{
             override fun onResponse(call: Call<PopularMovies>, response: Response<PopularMovies>) {
                 val result=response.body()
-                Log.d("OUT",result.toString())
                 if (result != null) {
                     txtPageNo.text=result.page.toString()
                     adapter= PopularMovieAdapter(this@MainActivity,result.results)

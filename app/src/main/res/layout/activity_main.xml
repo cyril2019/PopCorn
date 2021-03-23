@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <LinearLayout
+        android:id="@+id/llPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:weightSum="6"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="0px"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="Populor Movies"
+
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_weight="3"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnPrevPage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" "
+                android:background="@mipmap/prev_page"/>
+            <TextView
+                android:id="@+id/txtPageNo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+            <Button
+                android:id="@+id/btnNextPage"
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@mipmap/next_page"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_below="@id/llPage"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/line"
+        android:id="@+id/MovieList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

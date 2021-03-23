@@ -1,13 +1,21 @@
-package com.iiitk.popcorn
+package com.iiitk.popcorn.activity
 
+import android.content.Context
 import android.content.SharedPreferences
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.HorizontalScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.iiitk.popcorn.service.MovieService
+import com.iiitk.popcorn.adapters.PopularMovieAdapter
+import com.iiitk.popcorn.models.PopularMovies
+import com.iiitk.popcorn.R
+import com.iiitk.popcorn.database.FavDB
+import com.iiitk.popcorn.database.FavDao
+import com.iiitk.popcorn.database.FavEntity
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -43,13 +51,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getmovies( pg:Int) {
-        val movies=MovieService.movieInstance.getMovies(pg)
+        val movies= MovieService.movieInstance.getMovies(pg)
         movies.enqueue(object: Callback<PopularMovies>{
             override fun onResponse(call: Call<PopularMovies>, response: Response<PopularMovies>) {
                 val result=response.body()
                 if (result != null) {
                     txtPageNo.text=result.page.toString()
-                    adapter= PopularMovieAdapter(this@MainActivity,result.results)
+                    adapter= PopularMovieAdapter(
+                        this@MainActivity,
+                        result.results
+                    )
                     MovieList.adapter=adapter
                     MovieList.layoutManager=LinearLayoutManager(this@MainActivity)
                 }
@@ -60,4 +71,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+
 }

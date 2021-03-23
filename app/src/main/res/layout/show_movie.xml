@@ -83,14 +83,14 @@
                     android:layout_height="35dp"
                    android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:src="@mipmap/add_fav" />
+                    android:src="@mipmap/rem_fav" />
                 <ImageView
                     android:id="@+id/imgIsFav"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:src="@mipmap/rem_fav" />
+                    android:src="@mipmap/add_fav" />
 
             </RelativeLayout>
 

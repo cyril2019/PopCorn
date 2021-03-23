@@ -1,5 +1,8 @@
-package com.iiitk.popcorn
+package com.iiitk.popcorn.service
 
+import com.iiitk.popcorn.models.PopularMovies
+import com.iiitk.popcorn.models.ReviewList
+import com.iiitk.popcorn.models.VedioList
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,12 +22,13 @@ interface  MovieInterface{
 }
 
 object MovieService{
-    val movieInstance:MovieInterface
+    val movieInstance: MovieInterface
     init {
         val retrofit= Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        movieInstance=retrofit.create(MovieInterface::class.java)
+        movieInstance =retrofit.create(
+            MovieInterface::class.java)
     }
 }

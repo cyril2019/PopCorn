@@ -1,22 +1,21 @@
-package com.iiitk.popcorn
+package com.iiitk.popcorn.adapters
 
 import android.content.Context
 import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.single_review.*
+import com.iiitk.popcorn.R
+import com.iiitk.popcorn.models.Review
 
 class ReviewAdapter(val context:Context,val reviews:List<Review>):RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewViewHolder {
         val view= LayoutInflater.from(parent.context).inflate(R.layout.single_review,parent,false)
-        return ReviewAdapter.ReviewViewHolder(view)
+        return ReviewViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ReviewViewHolder, position: Int) {

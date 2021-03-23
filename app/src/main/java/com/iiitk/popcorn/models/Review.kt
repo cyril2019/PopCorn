@@ -1,7 +1,9 @@
-package com.iiitk.popcorn
+package com.iiitk.popcorn.models
+
+import com.iiitk.popcorn.models.Author
 
 data class Review(val author:String,
-                  val author_details:Author,
+                  val author_details: Author,
                   val content:String,
                   val created_at:String,
                   val id:String,

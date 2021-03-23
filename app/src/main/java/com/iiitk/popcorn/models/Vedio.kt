@@ -1,4 +1,4 @@
-package com.iiitk.popcorn
+package com.iiitk.popcorn.models
 
 data class Vedio(val id:String,
 val iso_639_1: String,

@@ -55,6 +55,8 @@
                         android:textStyle="italic"
                         android:textColor="#000000"
                         android:textSize="18sp"
+                        android:maxLines="3"
+                        android:ellipsize="end"
                         android:scrollbars = "vertical"
                         />
 
@@ -96,7 +98,7 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/rvReviews"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="250dp" />
         </RelativeLayout>
 
     </ScrollView>

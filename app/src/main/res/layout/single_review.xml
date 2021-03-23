@@ -32,6 +32,7 @@
             android:textStyle="italic"
             android:textAlignment="center"
             android:scrollbars = "vertical"
+            android:ellipsize="end"
             />
 
     </LinearLayout>

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 
 class MovieActivity : AppCompatActivity() {
-    val id:Int?=1
+    private var id:Int?=1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
